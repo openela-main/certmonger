@@ -1,0 +1,24 @@
+From 6224c3aa01665edddbda1ec7d1e35b03823eefcb Mon Sep 17 00:00:00 2001
+From: root <root@ci-vm-10-0-137-168.hosted.upshift.rdu2.redhat.com>
+Date: Wed, 7 Dec 2022 14:50:01 -0500
+Subject: [PATCH] Don't run the 002-keygen-* tests when root
+
+The permissions tests will fail.
+---
+ tests/002-keygen-dbm/prequal.sh | 5 +++++
+ 1 file changed, 5 insertions(+)
+ create mode 100755 tests/002-keygen-dbm/prequal.sh
+
+diff --git a/tests/002-keygen-dbm/prequal.sh b/tests/002-keygen-dbm/prequal.sh
+new file mode 100755
+index 0000000..b6c16e0
+--- /dev/null
++++ b/tests/002-keygen-dbm/prequal.sh
+@@ -0,0 +1,5 @@
++#!/bin/sh
++if test `id -u` -eq 0 ; then
++       echo "This test won't work right if run as root."
++       exit 1
++fi
+-- 
+2.31.1

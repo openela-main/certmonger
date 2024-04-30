@@ -28,14 +28,15 @@
 
 Name:		certmonger
 Version:	0.79.17
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Certificate status monitor and PKI enrollment client
 
 License:	GPLv3+
 URL:		http://pagure.io/certmonger/
 Source0:	http://releases.pagure.org/certmonger/certmonger-%{version}.tar.gz
 #Source1:	http://releases.pagure.org/certmonger/certmonger-%%{version}.tar.gz.sig
-
+Patch0001:	0001-getcert-return-2-when-trying-to-create-a-duplicate-e.patch
+Patch0002:	0002-getcert-add-NULL-check-to-duplicate-string-compare.patch
 
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -266,6 +267,9 @@ exit 0
 %endif
 
 %changelog
+* Thu Feb 01 2024 Rob Crittenden <rcritten@redhat.com> - 0.79.17-2
+- getcert should return unique error on duplicates (RHEL-22302)
+
 * Tue Dec  6 2022 Rob Crittenden <rcritten@redhat.com> - 0.79.17-1
 - Update to upstream 0.79.17
 

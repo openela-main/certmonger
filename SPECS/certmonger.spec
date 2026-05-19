@@ -27,8 +27,8 @@
 %bcond_with xmlrpc
 
 Name:		certmonger
-Version:	0.79.20
-Release:	3%{?dist}
+Version:	0.79.21
+Release:	1%{?dist}
 Summary:	Certificate status monitor and PKI enrollment client
 
 License:	GPL-3.0-or-later
@@ -264,6 +264,9 @@ exit 0
 %endif
 
 %changelog
+* Wed Oct 01 2025 Rob Crittenden <rcritten@redhat.com> - 0.79.21-1
+- Update to upstream 0.79.21 (RHEL-113257)
+
 * Tue Oct 29 2024 Troy Dawson <tdawson@redhat.com> - 0.79.20-3
 - Bump release for October 2024 mass rebuild:
   Resolves: RHEL-64018

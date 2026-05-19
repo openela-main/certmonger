@@ -27,7 +27,7 @@
 %bcond_with xmlrpc
 
 Name:		certmonger
-Version:	0.79.20
+Version:	0.79.21
 Release:	1%{?dist}
 Summary:	Certificate status monitor and PKI enrollment client
 
@@ -265,6 +265,9 @@ exit 0
 %endif
 
 %changelog
+* Fri Dec 12 2025 Francisco Trivino <ftrivino@redhat.com> - 0.79.21-1
+- Update to upstream 0.79.21
+
 * Mon Jun 10 2024 Rob Crittenden <rcritten@redhat.com> - 0.79.20-1
 - Update to upstream 0.79.20
 
